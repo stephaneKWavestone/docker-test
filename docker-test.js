@@ -1,10 +1,15 @@
-var express = require('express');
+'use strict';
 
-var app = express();
+const express = require('express');
 
-app.get('/', function(req, res) {
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Vous êtes à l\'accueil');
+// Constants
+const PORT = 8080;
+
+// App
+const app = express();
+app.get('/', function (req, res) {
+  res.send('Hello world\n');
 });
 
-app.listen(8080);
+app.listen(PORT);
+console.log('Running on http://localhost:' + PORT);
